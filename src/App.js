@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Link, Route } from 'wouter';
 import './App.css';
-
+import ListOfGifs from './pages/SearchResult/ListOfGifs';
+import { Home } from './pages/Home';
+import Context from './context/context';
+import Detail from './pages/Detail/Detail'
+import { GifsContextProvider } from './context/gifsContext';
 function App() {
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <GifsContextProvider>
+    <div className="App ">
+      <Route 
+        component={Home}
+        path="/"/>
+      <Route 
+        component={Detail}
+        path="/api/detail/:id"
+      />  
+      <Route path='/api/:keyword' component={ListOfGifs}></Route>
     </div>
+    </GifsContextProvider>
+    
   );
 }
 

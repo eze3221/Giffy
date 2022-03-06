@@ -1,0 +1,29 @@
+:root{
+    --results-columns: 2;
+}
+
+.ListOfGifs{
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 0 16px;
+    grid-template-rows: masonry;
+}
+
+.ListOfGifs-item{
+    
+    background-color: #eee;
+    display: inline-block;
+}
+
+/* @media(min-with: 600px){
+    :root{
+        --results-columns: 3;  
+    }
+}
+
+@media(min-with: 800px){
+    :root{
+        --results-columns: 4;  
+    }
+} */
