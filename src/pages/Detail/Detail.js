@@ -1,12 +1,14 @@
 import React, {useContext} from "react"
 import { Gif } from "../../components/Gif";
-import GifContext from "../../context/gifsContext"
+import useSingleGif from "../../hooks/useSingleGif";
 
 
 export default function Detail ({params}){
-    const context = useContext(GifContext);
-    const gifs = context[0]
-    const gif = gifs.find(singleGif => singleGif.id === params.id)
+    const gif = useSingleGif({id: params.id})
+
+    if(!gif) return null
+
+    
     return(
         <div>
             <Gif {...gif}></Gif>

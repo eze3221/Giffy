@@ -14,7 +14,7 @@ import React, {useState} from "react";
     return(
         <form onSubmit={onHandleSubmit}>
             <input placeholder="Busque gif" onChange={onChangeInput} type="text" value={keyword}></input>
-            <button type="button">Buscar gif</button>
+            <button type="submit">Buscar gif</button>
         </form>
     )
 }
