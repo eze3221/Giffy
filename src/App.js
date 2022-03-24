@@ -20,7 +20,7 @@ function App() {
         component={Detail}
         path="/api/detail/:id"
       />  
-      <Route path='/api/:keyword' component={ListOfGifs}></Route>
+      <Route path='/api/:keyword/:rating?' component={ListOfGifs}></Route>
     </div>
     </GifsContextProvider>
     

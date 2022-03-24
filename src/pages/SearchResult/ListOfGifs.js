@@ -5,15 +5,17 @@ import { Link, Route } from 'wouter';
 import { useEffect, useState } from 'react';
 import { useGifs } from "../../hooks/useGifs";
 import './styless.css'
+import SearchForm from "../SearchForm";
 
 export default function ListOfGifs({params}){
-    const {keyword} = params
-    const {gifs, setPage} = useGifs({keyword})
+    const {keyword,rating} = params
+    const {gifs, setPage} = useGifs({keyword},{rating})
     
 
     const handleNextPage = () => setPage(prevPage => prevPage + 1)
 
     return(<div >
+            <SearchForm></SearchForm>
             <Link to='/'>Home</Link>
             <h1>{keyword}</h1>
            <div className="ListOfGifs">

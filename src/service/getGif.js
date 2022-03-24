@@ -1,7 +1,7 @@
 export default function getGif({
-    keyword = "",
+    keyword = "null",
     limit = 15,
-    rating = "g",
+    rating="g",
     page = 0,
   } = {}) {
     const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=dIJrma20pSU6ymMwWnDbiaT7NFHeAGVa&q=${keyword}&limit=${limit}&offset=${

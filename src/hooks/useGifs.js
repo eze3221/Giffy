@@ -3,7 +3,7 @@ import GifContext from '../context/gifsContext';
 import getGif from '../service/getGif';
 
 const INITIAL_PAGE = 0;
-export function useGifs({keyword} = {keyword: null}){
+export function useGifs({keyword} = {keyword: null},{rating}){
 const [gifs, setGift] = useContext(GifContext)
 const [page, setPage] = useState(INITIAL_PAGE)
 
@@ -12,13 +12,13 @@ const keyWordToUse = keyword || localStorage.getItem('lastKeyWord')
 useEffect(()=>{
         
         
-        getGif({keyword : keyWordToUse})
+        getGif({keyword : keyWordToUse},{rating})
         .then(res => {
         setGift(res);
         localStorage.setItem('lastKeyword', keyword)
     })
         
-    },[keyword, setGift, keyWordToUse])
+    },[keyword, setGift, keyWordToUse,rating])
 
 
 useEffect(()=>{
